@@ -1,36 +1,34 @@
-import React from "react";
-import axios from "axios";
-import { URL } from "../components/Api";
-import { useState } from "react";
-import {useNavigate} from 'react-router-dom'
+import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
+import { setUserToken, setLoginInfos } from "../featureRedux/userSlice";
+import { useDispatch } from "react-redux";
+import Axios from "axios";
 
-function Formulaire({ onSignIn }) {
-  const [username, setUsername] = useState("");
+function Formulaire() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate= useNavigate;
-  let User={username, password};
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await axios.post("http://localhost:3001/api/v1/user/login", User, {
-      headers: {
-        accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(User),
-    });
-    if (response.status === 200) {
-      const { token } = response.data.body;
-      localStorage.setItem("token", token);
-     
-      navigate("/profile");
-    }
-  } catch (error) {
-    if (error.response.status === 401 || error.response.status === 404) {
-      console.log("Error: " + error.response.data.message);
-    }
-  }
-};
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      email: e.target[0].value,
+      password: e.target[1].value,
+    };
+
+    Axios.post("http://localhost:3001/api/v1/user/login", data)
+      .then((response) => {
+        dispatch(setLoginInfos(data));
+        dispatch(setUserToken(response.data.body.token));
+        navigate("/User");
+      })
+      .catch((error) => {
+        console.log(error);
+        console.error("Cet identifiant ou ce mot de passe est inconnu, veuillez réessayer.");
+      });
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -38,9 +36,9 @@ const handleSubmit = async (e) => {
         <label htmlFor="username">Username:</label>
         <input
           type="text"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="input-wrapper">
@@ -56,10 +54,10 @@ const handleSubmit = async (e) => {
             <input type="checkbox" id="remember-me" />
             <label htmlFor="remember-me">Remember me</label>
           </div>
-
           <button type="submit" className="sign-in-button">
             Sign In
           </button>
         </form>
-        )}
+        )
+      }
         export default Formulaire;

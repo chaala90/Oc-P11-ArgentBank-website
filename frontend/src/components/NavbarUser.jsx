@@ -14,7 +14,6 @@ function NavbarUser(){
 <div className="row">
 <i className="fa-sharp fa-regular fa-circle-user"></i>
 <i className="fa-solid fa-power-off"></i>
-<i className="fa-solid fa-power-off"></i>
 </div>
 <div>
   <NavLink className="main-nav-item" to="/Login">

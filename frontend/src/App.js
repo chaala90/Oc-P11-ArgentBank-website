@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
@@ -13,6 +13,7 @@ import "./App.css"
 function App() {
   return (
     <div>
+      <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -23,6 +24,7 @@ function App() {
         <Route path="/Transaction" element={<Transaction />} />
       </Routes>
       <Footer />
+      </Router>
    </div>   
 )}
 

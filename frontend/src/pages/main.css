@@ -230,12 +230,19 @@ a {
   background-color: #fff;
   width: 80%;
   margin: 0 auto;
-  flex-direction: column;
+  /*flex-direction: column;*/
   padding: 1.5rem;
   box-sizing: border-box;
   text-align: left;
   margin-bottom: 2rem;
 }
+@media (max-width: 720px){
+  .account {
+  flex-direction: column;
+  }
+  .transaction-button{
+    width: 100%;
+  }}
 
 .account-amount {
   margin: 0;
@@ -265,6 +272,15 @@ a {
   color: #fff;
   font-weight: bold;
   padding: 10px;
+  margin-left: 0.5em;
+  border-radius: 0.25em;
+}
+.weight{
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
 }
 
 .header {
@@ -274,7 +290,8 @@ a {
 
 .transaction-button {
   display: block;
-  width: 100%;
+  /*width: 36%;*/
+  margin-left: 22rem;
   padding: 8px;
   font-size: 1.1rem;
   font-weight: bold;
@@ -295,6 +312,7 @@ a {
 
   .transaction-button {
     width: 200px;
+    margin-left: 22rem;
   }
 
   .hero-content {
@@ -314,6 +332,9 @@ a {
   .hero-content .subtitle .text {
     font-size: 0.75rem;
   }
+  .transaction-button {
+    margin-left: 0;
+}
 }
 
 .darkField {
@@ -340,9 +361,6 @@ a {
   font-weight: bold;
   color: #fff;
 }
-
-.left {}
-
 .sign-in-content {
   margin-top: 0;
 }
@@ -360,10 +378,13 @@ input {
 }
 
 .edit-button {
-  width: 46%;
-  margin-left: 0.5em;
-  border-radius: 0.25em;
+ /* width: 7%;*/
+  
 }
+@media (max-width: 720px) {
+.edit-button {
+width: 46%;
+}}
 .oups{
   font-size: 1.5em;
   color: mediumseagreen;
