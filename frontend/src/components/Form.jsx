@@ -25,7 +25,6 @@ function Formulaire() {
         navigate("/User");
       })
       .catch((error) => {
-        console.log(error);
         console.error("Cet identifiant ou ce mot de passe est inconnu, veuillez réessayer.");
       });
   };

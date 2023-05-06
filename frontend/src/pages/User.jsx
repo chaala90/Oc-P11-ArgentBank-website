@@ -27,7 +27,7 @@ function User() {
 <div className="main bg-dark">
       <EditName />
       {Accounts.map(account=>
-    <Account title={account.title} amount={account.amount} description={account.description} key={account.key}/>
+    <Account key={account.id} title={account.title} amount={account.amount} description={account.description} />
       )}
     </div>
     )

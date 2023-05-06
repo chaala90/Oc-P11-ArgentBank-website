@@ -5,6 +5,7 @@ const initialState = {
   token: null,
   firstName: null,
   lastName: null,
+  username: null,
 };
 
 const userSlice = createSlice({
@@ -23,8 +24,15 @@ const userSlice = createSlice({
     setUserLastName: (state, action) => {
       state.lastName = action.payload;
     },
+    setUsername: (state, action) => {
+      state.username = action.payload;
+    },
     setLogout: (state) => {
-      state = initialState;
+      state.loginInfos = null;
+  state.token = null;
+  state.firstName = null;
+  state.lastName = null;
+  state.username = null;
     },
   },
 });
@@ -40,5 +48,6 @@ export const {
   setUserToken,
   setUserFirstName,
   setUserLastName,
+  setUsername,
   setLogout,
 } = userSlice.actions;

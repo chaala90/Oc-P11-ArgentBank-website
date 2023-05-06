@@ -1,13 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { setUserToken, setLoginInfos } from "../featureRedux/userSlice";
-import { useDispatch } from "react-redux";
+import { setUserToken, setLoginInfos,  } from "../featureRedux/userSlice";
+import {useSelector, useDispatch } from "react-redux";
 import Axios from "axios";
 import Formulaire from "../components/Form"
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+ /* const username = useSelector((state) => state.user.username);*/ // récupérer le nom d'utilisateur dans le store Redux
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -20,7 +21,8 @@ const Login = () => {
       .then((response) => {
         dispatch(setLoginInfos(data));
         dispatch(setUserToken(response.data.body.token));
-        navigate("/User");
+       /* dispatch(setUsername(response.data.body.username)); // mettre à jour le username dans le store
+        navigate("/User");*/
       })
       .catch((error) => {
         console.log(error);
