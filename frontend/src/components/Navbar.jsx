@@ -1,5 +1,5 @@
 import React from "react"
-import "../components/main.css"
+import "../components/header-footer.css";
 import { NavLink } from "react-router-dom";
 import SignIn from "../components/SignIn";
 import Logo from "../assets/argentBankLogo.webp"

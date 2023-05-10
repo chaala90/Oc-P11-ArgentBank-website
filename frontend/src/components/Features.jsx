@@ -1,5 +1,5 @@
 import React from "react"
-import "../components/main.css"
+import "../components/features.css"
 import ChatIcon from "../assets/icon-money.webp"
 import ChatMoney from "../assets/icon-money.webp"
 import ChatSecurity from "../assets/icon-security.webp"

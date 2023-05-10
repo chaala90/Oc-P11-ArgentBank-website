@@ -1,5 +1,6 @@
 import React from "react"
-
+import '../components/account.css';
+import { NavLink } from "react-router-dom";
 function Account({title,amount,description}){
     return (
         <>
@@ -11,7 +12,9 @@ function Account({title,amount,description}){
           <p className="account-amount-description">{description}</p>
         </div>
         <div className="account-content-wrapper cta">
+          <NavLink to="/Transaction">
           <button className="transaction-button">View transactions</button>
+          </NavLink>
         </div>
       </div>
       </>

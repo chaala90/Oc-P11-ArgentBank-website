@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { setUserToken, setLoginInfos } from "../featureRedux/userSlice";
+import { setUserToken, setLoginInfos, setUserFirstName } from "../featureRedux/userSlice";
 import { useDispatch } from "react-redux";
+import "../components/form.css";
 import Axios from "axios";
 
 function Formulaire() {
@@ -22,10 +23,13 @@ function Formulaire() {
       .then((response) => {
         dispatch(setLoginInfos(data));
         dispatch(setUserToken(response.data.body.token));
+        dispatch(setUserFirstName(response.data.body.firstName));
         navigate("/User");
       })
+      
       .catch((error) => {
         console.error("Cet identifiant ou ce mot de passe est inconnu, veuillez réessayer.");
+        
       });
   };
 

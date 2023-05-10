@@ -1,0 +1,15 @@
+.bg-dark {
+    background-color: #12002b;
+}
+.main {
+    flex: 1 1;
+}
+.sign-in-content {
+    margin-top: 0;
+    box-sizing: border-box;
+    background-color: white;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 2rem;
+}

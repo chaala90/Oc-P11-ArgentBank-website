@@ -1,52 +1,33 @@
-import React from "react"
-import "../pages/main.css"
-import { NavLink } from "react-router-dom";
+import React from "react";
+import "../pages/edituser.css";
+import { NavLink,useNavigate } from "react-router-dom";
+import EditedName from "../components/Editform";
 
 const Accounts = [
   {
     id: 1,
     title: "Argent Bank Checking (x8349)",
     amount: "$48,098.43",
-    description:"Available Balance",
+    description: "Available Balance",
   },
   {
     id: 2,
     title: "Argent Bank Savings (x6712)",
     amount: "$48,098.43",
-    description:"Available Balance",
+    description: "Available Balance",
   },
   {
     id: 3,
     title: "Argent Bank Credit Card (x8349)",
     amount: "$48,098.43",
-    description:"Available Balance",
+    description: "Available Balance",
   },
 ];
-function EditUser({title, amount, description}) {
+
+function EditUser({ title, amount, description }) {
     return(
 <>
-      <div className="sign-in-content">
-        <i className="fa fa-user-circle sign-in-icon"></i>
-        <h1>Edit user info</h1>
-        <form>
-          <div className="input-user">
-            <label htmlFor="username">Username:</label>
-            <input type="text" id="username" />
-          </div>
-          <div className="input-user">
-            <label htmlFor="firstname">First name:</label>
-            <input disabled="disabled" type="firstname" id="username" />
-          </div>
-          <div className="input-user">
-            <label htmlFor="lastname">Last name:</label>
-            <input disabled="disabled" type="lastname" id="username" />
-          </div>
-          <div className="row">
-          <button className="edit-button">Save</button>
-          <button className="edit-button">Cancel</button>
-          </div>
-        </form>
-      </div>
+      <EditedName />
       <div className="column">
         {Accounts.map((account) => (
           <div className="darkField" key={account.id}>

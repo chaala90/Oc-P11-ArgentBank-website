@@ -1,5 +1,5 @@
 import React from "react"
-import "../pages/main.css"
+import './profile.css'
 import EditName from "../components/EditName";
 import Account from "../components/Account";
 const Accounts = [

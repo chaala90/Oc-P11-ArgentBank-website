@@ -18,5 +18,6 @@ router.put(
   tokenValidation.validateToken,
   userController.updateUserProfile
 )
+/*router.post('/update', tokenValidation.validateToken, userController.updateUserProfile)*/
 
 module.exports = router
