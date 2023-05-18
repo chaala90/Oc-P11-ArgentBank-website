@@ -1,5 +1,5 @@
 import React from "react";
-import Formulaire from "../components/Form"
+import Formulaire from "../../components/form/Form"
 
 const Login = () => {
 

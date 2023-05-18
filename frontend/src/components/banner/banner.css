@@ -4,10 +4,11 @@
     align-items: center;
     padding: 5px 20px;
 }
+@media (max-width: 768px) {
+  
 .main-nav a {
-    font-weight: bold;
-    color: #2c3e50;
-}
+  font-size: 0.9em;
+}}
 .main-nav-logo-image {
     max-width: 100%;
     width: 200px;
@@ -19,11 +20,12 @@
     margin-left: 0.45em;
 }
 .hero {
-    background-image: url('../assets/bank-tree.webp');
-    background-position: 0 -50px;
+    background-image: url('../../assets/bank-tree.webp');
+   /* background-position: 0 -50px;*/
     background-size: cover;
     background-repeat: no-repeat;
-    height: 300px;
+    height: 400px;
+    background-position: 0% 33%;
     position: relative;
   }
   
@@ -79,9 +81,9 @@
     font-size: 0.75rem;
     }
     .hero-content{
-    width: 40%;
-    padding:1em;
-    top: 6.5rem;
-    left: 3.5em;
+      width: 32%;
+      padding: 1em;
+      top: 12em;
+      left: 5em;
     }
   }

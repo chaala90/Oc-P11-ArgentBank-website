@@ -4,8 +4,14 @@
 .sign-in-icon {
     font-size: 5rem;
 }
-.input-user label, input {
-    /* width: auto; */
+.input-user{
+  margin-bottom: 0.7em;
+}
+.input-user .labelform {
+     width: 50%;
+}
+.input-user #username{
+  width: 50%;
 }
 .edit-button {
     border-color: #00bc77;

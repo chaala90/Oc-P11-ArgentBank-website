@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../components/editform.css";
-import { NavLink,useNavigate } from "react-router-dom";
-import { setUsername } from "../featureRedux/userSlice";
+import "../editform/editform.css";
+import { useNavigate } from "react-router-dom";
+import { setUsername } from "../../featureRedux/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Axios from "axios";
 function EditedName() {
@@ -11,9 +11,10 @@ function EditedName() {
     const [updateName, setUpdateName] = useState(false);
     const token = useSelector((state) => state.user.token);
   
-    const handleUpdateName = () => {
+    const handleUpdateName = (event) => {
       const username = document.getElementById("username").value;
       if (username !== "") {
+        event.preventDefault();
         setUserName(username);
         dispatch(setUsername(username));
         updateData(username);
@@ -36,7 +37,7 @@ function EditedName() {
         },
       })
         .then((response) => {
-          console.log(response);
+          console.log("username successfully changed");
         })
         .catch((error) => {
           console.error("Error updating username.");
@@ -49,7 +50,7 @@ function EditedName() {
         <h1>Edit user info</h1>
         <form>
           <div className="input-user">
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username" className="labelform">Username:</label>
             <input type="text" id="username" />
           </div>
           <div className="input-user">
@@ -57,7 +58,7 @@ function EditedName() {
             <input disabled="disabled" readOnly type="firstname" id="username" />
           </div>
           <div className="input-user">
-            <label htmlFor="lastname">Last name:</label>
+            <label htmlFor="lastname" className="labelform">Last name:</label>
             <input disabled="disabled" readOnly type="lastname" id="username" />
           </div>
           <div className="row">

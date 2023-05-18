@@ -1,8 +1,8 @@
 import React from "react"
-import "../components/features.css"
-import ChatIcon from "../assets/icon-money.webp"
-import ChatMoney from "../assets/icon-money.webp"
-import ChatSecurity from "../assets/icon-security.webp"
+import "../features/features.css"
+import ChatIcon from "../../assets/icon-chat.webp"
+import ChatMoney from "../../assets/icon-money.webp"
+import ChatSecurity from "../../assets/icon-security.webp"
 function Features(){
   return(
 <div className="features">

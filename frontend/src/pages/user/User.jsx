@@ -1,7 +1,7 @@
 import React from "react"
-import './profile.css'
-import EditName from "../components/EditName";
-import Account from "../components/Account";
+import '../user/user.css'
+import EditName from "../../components/editname/EditName";
+import Account from "../../components/account/Account";
 const Accounts = [
     {
       id: 1,

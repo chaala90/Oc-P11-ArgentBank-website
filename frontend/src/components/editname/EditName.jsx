@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
-import "../components/editname.css";
+import "../editname/editname.css";
 import { NavLink } from "react-router-dom";
-import { setUsername } from "../featureRedux/userSlice"; 
+import { setUsername } from "../../featureRedux/userSlice"; 
 import { useDispatch, useSelector } from "react-redux";
 import Axios from "axios";
 

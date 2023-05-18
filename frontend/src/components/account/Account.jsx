@@ -1,5 +1,5 @@
 import React from "react"
-import '../components/account.css';
+import '../account/account.css';
 import { NavLink } from "react-router-dom";
 function Account({title,amount,description}){
     return (

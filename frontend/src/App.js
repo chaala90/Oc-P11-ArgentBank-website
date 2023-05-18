@@ -1,14 +1,12 @@
 import React from "react";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom"
-import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"
-import Home from "./pages/Home"
-import ErrorPage from "./pages/ErrorPage"
-import Login from "./pages/Login"
-import User from "./pages/User"
-import EditUser from "./pages/EditUser"
-import Transaction from "./pages/Transaction"
-
+import Navbar from "./components/headerfooter/Navbar"
+import Footer from "./components/headerfooter/Footer"
+import Home from "./pages/home/Home"
+import ErrorPage from "./pages/error/ErrorPage"
+import Login from "./pages/login/Login"
+import User from "./pages/user/User"
+import EditUser from "./pages/edituser/EditUser"
 
 import "./App.css"
 function App() {
@@ -22,7 +20,6 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/User" element={<User />} />
         <Route path="/EditUser" element={<EditUser />} />
-        <Route path="/Transaction" element={<Transaction />} />
       </Routes>
       <Footer />
       </Router>

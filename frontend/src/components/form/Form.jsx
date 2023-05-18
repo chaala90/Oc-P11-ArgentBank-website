@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { setUserToken, setLoginInfos, setUserFirstName } from "../featureRedux/userSlice";
+import { setUserToken, setLoginInfos, setUserFirstName } from "../../featureRedux/userSlice";
 import { useDispatch } from "react-redux";
-import "../components/form.css";
+import "../form/form.css";
 import Axios from "axios";
 
 function Formulaire() {
@@ -36,7 +36,7 @@ function Formulaire() {
   return (
     <form onSubmit={handleSubmit}>
       <div className="input-wrapper">
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="username" className="labell">Username:</label>
         <input
           type="text"
           id="email"
@@ -45,7 +45,7 @@ function Formulaire() {
         />
       </div>
       <div className="input-wrapper">
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password"  className="labell">Password:</label>
         <input
           type="password"
           id="password"

@@ -1,4 +1,12 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import {configureStore,createSlice,getDefaultMiddleware,  } from "@reduxjs/toolkit";
+import { persistReducer,FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER, } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+
 
 const initialState = {
   loginInfos: null,
@@ -36,11 +44,20 @@ const userSlice = createSlice({
     },
   },
 });
+const persistConfig = {
+  key: "root",
+  storage,
+};
 
+export const persistedReducer = persistReducer(persistConfig, userSlice.reducer);
 export const store = configureStore({
   reducer: {
-    user: userSlice.reducer,
+    user: persistedReducer,
   },
+  middleware: getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },})
 });
 
 export const {
@@ -48,7 +65,6 @@ export const {
   setUserToken,
   setUserFirstName,
   setUserLastName,
-  setUserFullName,
   setUsername,
   setLogout,
 } = userSlice.actions;

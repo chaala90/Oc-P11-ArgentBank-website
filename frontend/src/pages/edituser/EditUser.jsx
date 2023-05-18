@@ -1,7 +1,7 @@
 import React from "react";
-import "../pages/edituser.css";
-import { NavLink,useNavigate } from "react-router-dom";
-import EditedName from "../components/Editform";
+import "../edituser/edituser.css";
+import { NavLink } from "react-router-dom";
+import EditedName from "../../components/editform/Editform";
 
 const Accounts = [
   {

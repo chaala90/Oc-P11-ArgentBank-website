@@ -1,5 +1,5 @@
 import React from "react"
-import "../components/banner.css"
+import "../banner/banner.css"
 function Banner() {
   return (
     <div className="hero">

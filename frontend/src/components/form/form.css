@@ -21,7 +21,7 @@
 .input-remember {
     display: flex;
 }
-.input-user label, input {
+.input-wrapper label, input {
     width: auto;
 }
 .input-remember label {

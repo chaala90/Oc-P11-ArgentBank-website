@@ -1,8 +1,8 @@
 import React from "react"
-import "../components/header-footer.css";
+import "../headerfooter/header-footer.css";
 import { NavLink } from "react-router-dom";
-import SignIn from "../components/SignIn";
-import Logo from "../assets/argentBankLogo.webp"
+import SignIn from "../signin/SignIn";
+import Logo from "../../assets/argentBankLogo.webp"
 function Navbar(){
   return(
 <div className="main-nav">
