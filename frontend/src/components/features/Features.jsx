@@ -1,43 +1,43 @@
 import React from "react"
 import "../features/features.css"
+import Item from "../item/item";
 import ChatIcon from "../../assets/icon-chat.webp"
 import ChatMoney from "../../assets/icon-money.webp"
 import ChatSecurity from "../../assets/icon-security.webp"
+const details = [
+  {
+    id: 1,
+    img: ChatIcon,
+    title: "You are our #1 priority",
+    text: `Need to talk to a representative? You can get in touch through our
+    24/7  chat or through a phone call in less than 5 minutes.`,
+  },
+  {
+    id: 2,
+    img: ChatMoney,
+    title: "More savings means higher rates",
+    text: `The more you save with us, the higher your interest rate will be!`,
+  },
+  {
+    id: 3,
+    img: ChatSecurity,
+    title: "Security you can trust",
+    text: ` We use top of the line encryption to make sure your data and money
+    is always safe.`,
+  },
+];
 function Features(){
   return(
 <div className="features">
 <h2 className="sr-only">Features</h2>
-<div className="feature-item">
-  <img src={ChatIcon} alt="Chat Icon" className="feature-icon" />
-  <h3 className="feature-item-title">You are our #1 priority</h3>
-  <p>
-    Need to talk to a representative? You can get in touch <br/> through our
-    24/7 chat or through a phone call in less than 5 minutes.
-  </p>
-</div>
-<div className="feature-item">
-  <img
-    src={ChatMoney}
-    alt="Money Icon"
-    className="feature-icon"
-  />
-  <h3 className="feature-item-title">More savings means higher rates</h3>
-  <p>
-    The more you save with us, the higher your interest rate will be!
-  </p>
-</div>
-<div className="feature-item">
-  <img
-    src={ChatSecurity}
-    alt="Security Icon"
-    className="feature-icon"
-  />
-  <h3 className="feature-item-title">Security you can trust</h3>
-  <p>
-    We use top of the line encryption to make sure your data and money
-    is always safe.
-  </p>
-</div>
+{details.map((detail) => (
+        <Item
+          img={detail.img}
+          title={detail.title}
+          text={detail.text}
+          key={detail.id}
+        />
+      ))}
 </div>
 )}
 export default Features;
